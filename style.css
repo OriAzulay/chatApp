@@ -1,0 +1,46 @@
+body {
+  background-color: PaleGreen;
+}
+
+* {
+  box-sizing: border-box;
+}
+.container{
+	margin: 300px 690px 0;
+	width: 25%;
+	position: center;
+	border-style: groove;
+	border-radius: 8px;
+	background-color: Cyan;
+	padding: 40px;
+}
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+.col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+}
+
+.col-75 {
+  float: right;
+  width: 75%;
+  margin-top: 12px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+input[type=text], select, textarea {
+  width: 75%;
+  padding: 9px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
