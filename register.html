@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Chat</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+
+	<div class="container">
+		<form action="test.html" method="GET">
+			<!--user name-->
+			<div class="row">
+				<div class="col-25">
+					<label for="fname">User name</label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="fname" name="username" placeholder="Your name..">
+				</div>
+			</div>
+			<!-- password -->
+			<div class="row">
+				<div class="col-25">
+					<label for="pass">Password</label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="pass" name="password" placeholder="Your password..">
+				</div>
+			</div>
+			<!--Display name-->
+			<div class="row">
+				<div class="col-25">
+					<label for="dispname">Display name</label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="dispname" name="displatName" placeholder="Name..">
+				</div>
+			</div>
+			<!-- Button-->
+			<div>
+				<button class="button" type="submit" formaction="test.html" onclick="Register() ">Register</button>
+				<a>Already registerd? </a>
+				<a href="app.html">Click here</a>
+				<a>to login</a>
+			</div>
+		</form>
+	</div>
+
+<script>
+const users = [];
+function Register() {
+    alert("inside Register()");
+    let name = document.getElementById("fname").value;
+    let pass = document.getElementById("pass").value;
+    let disp = document.getElementById("dispname").value;
+    users.push({ user: name, password: pass, display: disp });
+}
+</script>
+
+
+
+</body>
+
+</html>
