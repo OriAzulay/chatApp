@@ -10,7 +10,6 @@
 <body>
 
 	<div class="container">
-		<form action="test.html" method="GET">
 			<!--user name-->
 			<div class="row">
 				<div class="col-25">
@@ -40,23 +39,26 @@
 			</div>
 			<!-- Button-->
 			<div>
-				<button class="button" type="submit" formaction="test.html" onclick="Register() ">Register</button>
+				<button class="button" id="btn" type="submit">Register</button>
 				<a>Already registerd? </a>
 				<a href="app.html">Click here</a>
 				<a>to login</a>
 			</div>
-		</form>
 	</div>
 
 <script>
-const users = [];
-function Register() {
-    alert("inside Register()");
-    let name = document.getElementById("fname").value;
-    let pass = document.getElementById("pass").value;
-    let disp = document.getElementById("dispname").value;
-    users.push({ user: name, password: pass, display: disp });
-}
+	var sessionString = sessionStorage.getItem('array');
+	var arr = JSON.parse(sessionString);
+	document.getElementById('btn').onclick = function(){
+		alert("inside Register()");
+		let name = document.getElementById("fname").value;
+		let pass = document.getElementById("pass").value;
+		let disp = document.getElementById("dispname").value;
+		arr.push({ user: name, password: pass, display: disp });
+		console.log(arr);
+		sessionStorage.setItem('array',JSON.stringify(arr));
+		window.location.href='test.html';
+	}
 </script>
 
 

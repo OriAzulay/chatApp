@@ -23,14 +23,42 @@
 	<!-- next -->
 	<div class="row">
 		<div class="col-25">
-			<label for="lname">Password</label>
+			<label for="pass">Password</label>
 		</div>
 		<div class="col-75">
-			<input type="text" id="lname" name="password" placeholder="Your password..">
+			<input type="text" id="pass" name="password" placeholder="Your password..">
 		</div>
 	</div>
-  
+	<div>
+		<button class="button button-shadow" id="logbtn">Login </button>
+		<a>Not registered? </a>
+		<a href="register.html">Click here</a>
+		<a>to register</a>
+	</div>
 </div>
+<script>
+	var user1 = {user:'Bob', password: 'Ba102030', display:'Bob1'};
+	var user2 = {user:'Eve', password:'E102030', display:'EE'};
+	var user3 = {user:'Alice', password:'AL102030', display:'AL'};
+	const users = [user1,user2,user3];
+	sessionStorage.setItem('array',JSON.stringify(users))
+	document.getElementById('logbtn').onclick = function(){
+		alert("inside log()");
+		let name = document.getElementById("fname").value;
+		let pass = document.getElementById("pass").value;
+		for (let u in users){
+			var x = 0;
+			if (name == users[u].user && pass==users[u].password){
+				x=1;
+				window.location.href='test.html';
+			}
+			break;
+		}
+		if(x != 1){
+			window.alert("Do you have an account? try again or register");	
+		}
+	}
+</script>
 
 
 

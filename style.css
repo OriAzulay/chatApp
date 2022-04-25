@@ -6,8 +6,8 @@ body {
   box-sizing: border-box;
 }
 .container{
-	margin: 300px 690px 0;
-	width: 25%;
+	margin: 100px 290px 0;
+	width: 55%;
 	position: center;
 	border-style: groove;
 	border-radius: 8px;
@@ -43,4 +43,20 @@ input[type=text], select, textarea {
   border-radius: 4px;
   resize: vertical;
 }
+.button {
+  background-color: #68d86c; /* Green */
+  border: none;
+  color: white;
+  padding: 10px 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 
