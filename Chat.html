@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Chat room</title>
+        <link rel ="stylesheet" type="text/css" href="stylechat.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="leftSide">
+                <!--search tool-->
+                <div class="search-chat">
+                    <div>
+                        <input type="text" placeholder="Search">
+                    </div>
+                </div>
+                <!--chat list-->
+                <div class="chatlist">
+                    <!--player1-->
+                    <div class="block">
+                        <div class="imgbx">
+                            <img src="avatar.JPG" class="cover">
+                        </div>
+                        <div class="details">
+                            <div class="listHead">
+                                <h4>name</h4>
+                                <p>Time: 00:00</p>
+                            </div>
+                            <div class="message_p">
+                                <p1>last message..sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf.</p1>
+                            </div>
+                        </div>
+                    </div>
+                    <!--player2-->
+                    <div class="block">
+                        <div class="imgbx">
+                            <img src="avatar.JPG" class="cover">
+                        </div>
+                        <div class="details">
+                            <div class="listHead">
+                                <h4>name22</h4>
+                                <p>Time: 00:20</p>
+                            </div>
+                            <div class="message_p">
+                                <p1>last message...</p1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightSide">
+                <div class="header">
+                    <div class="username">
+                        <h4>Name</h4>
+                    </div>
+                </div>
+                <!--chat box-->
+                <div class="chatbox">
+                    <div class="message message_my">
+                        <p> Hiiii111<br><span>12:14</span></p>
+                    </div>
+                    <div class="message message_other">
+                        <p> Hiiii<br><span>12:14</span></p>
+                    </div>
+                </div> 
+                <!--chat input-->
+                <div class="chat_input">
+                    <input type="text" placeholder="Type a message">
+                </div>
+            </div>
+        </div>
+    </body>
+
+
+    <script>
+        var sessionString = sessionStorage.getItem('array');
+        var arr = JSON.parse(sessionString);
+        console.log(arr);
+        document.getElementById("Uname").innerHTML = arr[0].user;
+    </script>
+</html>
