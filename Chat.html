@@ -4,6 +4,7 @@
         <meta name ="viewport" content="width=device-width, initial-scale=1.0">
         <title> Chat room</title>
         <link rel ="stylesheet" type="text/css" href="stylechat.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     </head>
     <body>
         <div class="container">
@@ -23,7 +24,7 @@
                         </div>
                         <div class="details">
                             <div class="listHead">
-                                <h4>name</h4>
+                                <h4 id="name2">name</h4>
                                 <p>Time: 00:00</p>
                             </div>
                             <div class="message_p">
@@ -38,7 +39,7 @@
                         </div>
                         <div class="details">
                             <div class="listHead">
-                                <h4>name22</h4>
+                                <h4 id="name1">name22</h4>
                                 <p>Time: 00:20</p>
                             </div>
                             <div class="message_p">
@@ -55,27 +56,40 @@
                     </div>
                 </div>
                 <!--chat box-->
-                <div class="chatbox">
-                    <div class="message message_my">
+                <div class="chatbox" id="chatbox">
+                    <div class="message message_my" id="mymessage">
                         <p> Hiiii111<br><span>12:14</span></p>
                     </div>
                     <div class="message message_other">
-                        <p> Hiiii<br><span>12:14</span></p>
+                        <p id="msg"> Hiiii<br><span>12:14</span></p>
                     </div>
                 </div> 
                 <!--chat input-->
                 <div class="chat_input">
-                    <input type="text" placeholder="Type a message">
+                    <input type="text" id="textinput" placeholder="Type a message">
+                    <button class="send_button" id="send_btn" type="submit">Send</button>
                 </div>
+                
             </div>
         </div>
     </body>
 
-
+    
     <script>
         var sessionString = sessionStorage.getItem('array');
-        var arr = JSON.parse(sessionString);
+        const arr = JSON.parse(sessionString);
         console.log(arr);
-        document.getElementById("Uname").innerHTML = arr[0].user;
+        document.getElementById("name1").innerHTML = arr[0].user;
+        document.getElementById("name2").innerHTML = arr[1].user;
+        document.getElementById("send_btn").onclick = function(){
+            const msg = document.getElementById("textinput").value;
+            var today = new Date();
+            var time = today.getHours() + ":" + today.getMinutes();
+            const stringmsg = '<div class="message message_my"><p id="msg">'
+                + msg + '<br><span>' + time + '</span></p> </div>';          
+            const msgDiv = document.getElementById("chatbox");
+            msgDiv.innerHTML += stringmsg;
+            
+	    }
     </script>
 </html>

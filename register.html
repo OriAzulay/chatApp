@@ -16,7 +16,7 @@
 					<label for="fname">User name</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="fname" name="username" placeholder="Your name..">
+					<input type="text" id="fname" name="username" placeholder="Your name.." required>
 				</div>
 			</div>
 			<!-- password -->
@@ -25,7 +25,7 @@
 					<label for="pass">Password</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="pass" name="password" placeholder="Your password..">
+					<input type="password" id="pass" name="password" placeholder="Your password.." required>
 				</div>
 			</div>
 			<!--Display name-->
@@ -34,30 +34,39 @@
 					<label for="dispname">Display name</label>
 				</div>
 				<div class="col-75">
-					<input type="text" id="dispname" name="displatName" placeholder="Name..">
+					<input type="text" id="dispname" name="displatName" placeholder="Name.." required>
 				</div>
 			</div>
 			<!-- Button-->
 			<div>
 				<button class="button" id="btn" type="submit">Register</button>
 				<a>Already registerd? </a>
-				<a href="app.html">Click here</a>
+				<a href="login.html">Click here</a>
 				<a>to login</a>
 			</div>
 	</div>
 
 <script>
+	var user1 = {user:'Bob', password: 'Ba102030', display:'Bob1'};
+	var user2 = {user:'Eve', password:'E102030', display:'EE'};
+	var user3 = {user:'Alice', password:'AL102030', display:'AL'};
+	const arr1 = [user1,user2,user3];
+	const arr = [user1,user2,user3];
 	var sessionString = sessionStorage.getItem('array');
-	var arr = JSON.parse(sessionString);
+	console.log(arr);
 	document.getElementById('btn').onclick = function(){
 		alert("inside Register()");
 		let name = document.getElementById("fname").value;
 		let pass = document.getElementById("pass").value;
 		let disp = document.getElementById("dispname").value;
-		arr.push({ user: name, password: pass, display: disp });
+		if(arr != null){
+		arr.push({ user: name, password: pass, display: disp });	
+		}else{
+		arr1.push({ user: name, password: pass, display: disp });
+		}
 		console.log(arr);
 		sessionStorage.setItem('array',JSON.stringify(arr));
-		window.location.href='test.html';
+		window.location.href='Chat.html';
 	}
 </script>
 

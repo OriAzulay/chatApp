@@ -26,7 +26,7 @@
 			<label for="pass">Password</label>
 		</div>
 		<div class="col-75">
-			<input type="text" id="pass" name="password" placeholder="Your password..">
+			<input type="password" id="pass" name="password" placeholder="Your password..">
 		</div>
 	</div>
 	<div>
@@ -41,16 +41,15 @@
 	var user2 = {user:'Eve', password:'E102030', display:'EE'};
 	var user3 = {user:'Alice', password:'AL102030', display:'AL'};
 	const users = [user1,user2,user3];
-	sessionStorage.setItem('array',JSON.stringify(users))
+	sessionStorage.setItem('array',JSON.stringify(users));
 	document.getElementById('logbtn').onclick = function(){
-		alert("inside log()");
 		let name = document.getElementById("fname").value;
 		let pass = document.getElementById("pass").value;
 		for (let u in users){
 			var x = 0;
 			if (name == users[u].user && pass==users[u].password){
 				x=1;
-				window.location.href='test.html';
+				window.location.href='Chat.html';
 			}
 			break;
 		}
