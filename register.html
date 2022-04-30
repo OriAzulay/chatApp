@@ -48,14 +48,15 @@
 
 <script>
 	var user1 = {user:'Bob', password: 'Ba102030', display:'Bob1'};
-	var user2 = {user:'Eve', password:'E102030', display:'EE'};
-	var user3 = {user:'Alice', password:'AL102030', display:'AL'};
-	const arr1 = [user1,user2,user3];
-	const arr = [user1,user2,user3];
+	var user2 = {user:'Eve', password:'E1122551', display:'EE'};
+	var user3 = {user:'Alice', password:'AL205214', display:'AL'};
+	var user4 = {user:'Yotam', password: 'YoTheking1', display:'Bob1'};
+	var user5 = {user:'Dana', password:'D0987654', display:'EE'};
+	const arr1 = [user1,user2,user3,user4,user5];
+	const arr = [user1,user2,user3,user4,user5];
 	var sessionString = sessionStorage.getItem('array');
 	console.log(arr);
 	document.getElementById('btn').onclick = function(){
-		alert("inside Register()");
 		let name = document.getElementById("fname").value;
 		let pass = document.getElementById("pass").value;
 		let disp = document.getElementById("dispname").value;
@@ -66,6 +67,16 @@
 		}
 		console.log(arr);
 		sessionStorage.setItem('array',JSON.stringify(arr));
+		if (name == '' || pass == '' || disp == ''){
+			alert("Please enter valid input!");
+			return;
+		}
+		var flag = 0;
+		for (let i in pass){
+			if ( typeof pass.charAt(i) == "number"){
+				flag = 1;
+			}
+		}
 		window.location.href='Chat.html';
 	}
 </script>

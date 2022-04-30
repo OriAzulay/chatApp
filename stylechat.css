@@ -80,7 +80,12 @@ body
     padding: 15px;
     border-bottom: 1px solid rgba(0,0,0,0.06);
     cursor: pointer;
-    
+    opacity: 1;
+}
+.chatlist .block:hover
+{
+    opacity: 0.5;
+    background:rgb(14, 213, 177);
 }
 .chatlist .block .imgbx .cover
 {
@@ -190,6 +195,18 @@ body
 {
     justify-content: flex-start;
 }
+.Enter
+{
+    position: relative;
+    width: 70%;
+    height: 70%;
+    text-align: center;
+    align-items: center;
+    margin-top: 80px;
+    margin-left: 80px;
+    justify-content: flex-end;
+    font-size: 1.85em;
+}
  
 .chat_input
 {
@@ -212,6 +229,7 @@ body
     outline: none;
     border-radius: 30px;
     font-size: 1em;
+    text-overflow: ellipsis;
 }
 
 .send_button 

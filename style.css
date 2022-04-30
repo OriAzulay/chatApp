@@ -6,7 +6,7 @@ body {
   box-sizing: border-box;
 }
 .container{
-	margin: 100px 290px 0;
+	margin: 130px 320px 0;
 	width: 55%;
 	position: center;
 	border-style: groove;
@@ -69,4 +69,3 @@ input[type=password], select, textarea {
 .button:hover{
 opacity: 0.7;
 }
-

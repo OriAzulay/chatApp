@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>Chat</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
 	</head>
 <link rel="stylesheet" href="style.css">
 <body>
@@ -27,6 +28,7 @@
 		</div>
 		<div class="col-75">
 			<input type="password" id="pass" name="password" placeholder="Your password..">
+			<i class="bi bi-eye-slash" id="togglePassword"></i>
 		</div>
 	</div>
 	<div>
@@ -37,23 +39,38 @@
 	</div>
 </div>
 <script>
+	//script for toggle pass:
+	const togglePassword = document.querySelector("#togglePassword");
+	const password = document.querySelector("#pass");
+	console.log(password)
+	togglePassword.addEventListener("click", function () {
+    // toggle the type attribute
+    const type = password.getAttribute("type") === "password" ? "text" : "password";
+    password.setAttribute("type", type);
+    // toggle the eye / eye slash icon
+    this.classList.toggle("bi-eye");
+	});
 	var user1 = {user:'Bob', password: 'Ba102030', display:'Bob1'};
-	var user2 = {user:'Eve', password:'E102030', display:'EE'};
-	var user3 = {user:'Alice', password:'AL102030', display:'AL'};
-	const users = [user1,user2,user3];
+	var user2 = {user:'Eve', password:'E1122551', display:'EE'};
+	var user3 = {user:'Alice', password:'AL205214', display:'AL'};
+	var user4 = {user:'Yotam', password: 'YoTheking1', display:'Bob1'};
+	var user5 = {user:'Dana', password:'D0987654', display:'EE'};
+	const users = [user1,user2,user3,user4,user5];
 	sessionStorage.setItem('array',JSON.stringify(users));
+	var input = document.getElementById("myInput");
+	//on click:
 	document.getElementById('logbtn').onclick = function(){
 		let name = document.getElementById("fname").value;
 		let pass = document.getElementById("pass").value;
 		for (let u in users){
 			var x = 0;
 			if (name == users[u].user && pass==users[u].password){
-				x=1;
+				x=x+1;
 				window.location.href='Chat.html';
+				return;
 			}
-			break;
 		}
-		if(x != 1){
+		if(x == 0){
 			window.alert("Do you have an account? try again or register");	
 		}
 	}
