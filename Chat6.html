@@ -17,77 +17,77 @@
                 <!--chat list-->
                 <div class="chatlist" id="chatlist">
                     <!--player1-->
-                    <div class="block" onclick="location.href='Chat2.html'">
+                    <div class="block" id="play1" onclick="location.href='Chat2.html'">
                         <div class="imgbx">
                             <img src="avatar.JPG" class="cover">
                         </div>
                         <div class="details">
                             <div class="listHead">
-                                <h4 id="name1">Dana</h4>
-                                <p>Time: 00:00</p>
+                                <h4 id="name1">Bob</h4>
+                                <p>Time:12:11</p>
                             </div>
                             <div class="message_p">
-                                <p1>last message..sdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf.</p1>
+                                <p1>Hiiii, my name is Bob</p1>
                             </div>
                         </div>
                     </div>
                     <!--player2-->
-                    <div class="block" onclick="location.href='Chat3.html'">
+                    <div class="block" id="play2" onclick="location.href='Chat3.html'">
                         <div class="imgbx">
                             <img src="avatar.JPG" class="cover">
                         </div>
                         <div class="details">
                             <div class="listHead">
                                 <h4 id="name2">name22</h4>
-                                <p>Time: 00:20</p>
+                                <p>Time: 12:11</p>
                             </div>
                             <div class="message_p">
-                                <p1>last message...</p1>
+                                <p1>I am Eve</p1>
                             </div>
                         </div>
                     </div>
                     <!--player 3-->
-                    <div class="block" onclick="location.href='Chat4.html'">
+                    <div class="block" id="play3" onclick="location.href='Chat4.html'">
                         <div class="imgbx">
                             <img src="avatar.JPG" class="cover">
                         </div>
                         <div class="details">
                             <div class="listHead">
                                 <h4 id="name3">name3</h4>
-                                <p>Time: 00:20</p>
+                                <p>Time: 12:11</p>
                             </div>
                             <div class="message_p">
-                                <p1>last message...</p1>
+                                <p1>my name is Alice</p1>
                             </div>
                         </div>
                     </div>
                     <!--player 4-->
-                    <div class="block" onclick="location.href='Chat5.html'">
+                    <div class="block" id="play4" onclick="location.href='Chat5.html'">
                         <div class="imgbx">
                             <img src="avatar.JPG" class="cover">
                         </div>
                         <div class="details">
                             <div class="listHead">
                                 <h4 id="name4">name4</h4>
-                                <p>Time: 00:20</p>
+                                <p>Time: 12:11</p>
                             </div>
                             <div class="message_p">
-                                <p1>last message...</p1>
+                                <p1>Hi this is Yotam</p1>
                             </div>
                         </div>
                     </div>
                     <!--player 5-->
-                    <div class="block" onclick="location.href='Chat6.html'">
+                    <div class="block" id="play5" onclick="location.href='Chat6.html'">
                         <div class="imgbx">
                             <img src="avatar.JPG" class="cover">
                         </div>
                         <div class="details">
                             <div class="listHead">
                                 <h4 id="name5">name5</h4>
-                                <p>Time: 00:20</p>
+                                <p>Time: 12:11</p>
                             </div>
                             <div class="message_p">
-                                <p1>last message...</p1>
+                                <p1>Hiiii</p1>
                             </div>
                         </div>
                     </div>
@@ -124,13 +124,14 @@
         // script for users:
         // var sessionString = sessionStorage.getItem('array');
         // const arr = JSON.parse(sessionString);
+        //init page hardcoded:
         var today = new Date();
         var time = today.getHours() + ":" + today.getMinutes();
         var user1 = {user:'Bob', password: 'Ba102030', display:'Bob1'};
         var user2 = {user:'Eve', password:'E1122551', display:'EE'};
         var user3 = {user:'Alice', password:'AL205214', display:'AL'};
-        var user4 = {user:'Yotam', password: 'YoTheking1', display:'Bob1'};
-        var user5 = {user:'Dana', password:'D0987654', display:'EE'};
+        var user4 = {user:'Yotam', password: 'YoTheking1', display:'YOYO'};
+        var user5 = {user:'Dana', password:'D0987654', display:'Danale'};
         const arr = [user1,user2,user3,user4,user5];
         console.log(arr);
         document.getElementById("name1").innerHTML = arr[0].user;
@@ -138,6 +139,7 @@
         document.getElementById("name3").innerHTML = arr[2].user;
         document.getElementById("name4").innerHTML = arr[3].user;
         document.getElementById("name5").innerHTML = arr[4].user;
+        document.getElementById("play5").style.background = "rgb(96, 113, 110)";
         if (arr.length > 5){
         const userlist = '<div class="block"><div class="imgbx"> <img src="avatar.JPG" class="cover">'
                         + '</div><div class="details"><div class="listHead">'

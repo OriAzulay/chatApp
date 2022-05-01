@@ -45,13 +45,13 @@
 				<a>to login</a>
 			</div>
 	</div>
-
+<script src="Valid.js"></script>
 <script>
 	var user1 = {user:'Bob', password: 'Ba102030', display:'Bob1'};
 	var user2 = {user:'Eve', password:'E1122551', display:'EE'};
 	var user3 = {user:'Alice', password:'AL205214', display:'AL'};
-	var user4 = {user:'Yotam', password: 'YoTheking1', display:'Bob1'};
-	var user5 = {user:'Dana', password:'D0987654', display:'EE'};
+	var user4 = {user:'Yotam', password: 'YoTheking1', display:'YOYO'};
+	var user5 = {user:'Dana', password:'D0987654', display:'Danale'};
 	const arr1 = [user1,user2,user3,user4,user5];
 	const arr = [user1,user2,user3,user4,user5];
 	var sessionString = sessionStorage.getItem('array');
@@ -71,13 +71,28 @@
 			alert("Please enter valid input!");
 			return;
 		}
-		var flag = 0;
+		var flag = false;
+		var check1 = 0;
+		var check2 = 0;
 		for (let i in pass){
-			if ( typeof pass.charAt(i) == "number"){
-				flag = 1;
+			if (isPositiveInteger(pass.charAt(i))){
+				flag = true;
+				check1 = 1;
 			}
 		}
-		window.location.href='Chat.html';
+		flag = false;
+		for (let i in pass){
+			if (!isPositiveInteger(pass.charAt(i))){
+				flag = true;
+				check2 = 2;
+			}
+		}
+		var check = check1 + check2;
+		if(check == 3){window.location.href='Chat.html';}
+		else{
+			alert("Please enter a valid password - must includ numbers abd characters");
+		}
+		
 	}
 </script>
 

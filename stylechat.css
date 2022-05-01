@@ -153,6 +153,10 @@ body
     padding:  50px;
     overflow-y: auto;
 }
+.chatbox .Enter .bckg{
+    position: relative;
+    width: 30%;
+}
 .message
 {
     position: relative;
