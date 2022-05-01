@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Chat room4</title>
+        <link rel ="stylesheet" type="text/css" href="stylechat.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="leftSide">
+                <!--search tool-->
+                <div class="search-chat">
+                    <div>
+                        <input type="text" placeholder="Search">
+                    </div>
+                </div>
+                <!--chat list-->
+                <div class="chatlist" id="chatlist">
+                    <!--player1-->
+                    <div class="block" id="play1" onclick="location.href='Chat2.html'">
+                        <div class="imgbx">
+                            <img src="avatar.JPG" class="cover">
+                        </div>
+                        <div class="details">
+                            <div class="listHead">
+                                <h4 id="name1">Bob</h4>
+                                <p>Time:12:11</p>
+                            </div>
+                            <div class="message_p">
+                                <p1>Hiiii, my name is Bob</p1>
+                            </div>
+                        </div>
+                    </div>
+                    <!--player2-->
+                    <div class="block" id="play2" onclick="location.href='Chat3.html'">
+                        <div class="imgbx">
+                            <img src="avatar.JPG" class="cover">
+                        </div>
+                        <div class="details">
+                            <div class="listHead">
+                                <h4 id="name2">name22</h4>
+                                <p>Time: 12:11</p>
+                            </div>
+                            <div class="message_p">
+                                <p1>I am Eve</p1>
+                            </div>
+                        </div>
+                    </div>
+                    <!--player 3-->
+                    <div class="block" id="play3" onclick="location.href='Chat4.html'">
+                        <div class="imgbx">
+                            <img src="avatar.JPG" class="cover">
+                        </div>
+                        <div class="details">
+                            <div class="listHead">
+                                <h4 id="name3">name3</h4>
+                                <p>Time: 12:11</p>
+                            </div>
+                            <div class="message_p">
+                                <p1>my name is Alice</p1>
+                            </div>
+                        </div>
+                    </div>
+                    <!--player 4-->
+                    <div class="block" id="play4" onclick="location.href='Chat5.html'">
+                        <div class="imgbx">
+                            <img src="avatar.JPG" class="cover">
+                        </div>
+                        <div class="details">
+                            <div class="listHead">
+                                <h4 id="name4">name4</h4>
+                                <p>Time: 12:11</p>
+                            </div>
+                            <div class="message_p">
+                                <p1>Hi this is Yotam</p1>
+                            </div>
+                        </div>
+                    </div>
+                    <!--player 5-->
+                    <div class="block" id="play5" onclick="location.href='Chat6.html'">
+                        <div class="imgbx">
+                            <img src="avatar.JPG" class="cover">
+                        </div>
+                        <div class="details">
+                            <div class="listHead">
+                                <h4 id="name5">name5</h4>
+                                <p>Time: 12:11</p>
+                            </div>
+                            <div class="message_p">
+                                <p1>Hiiii</p1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="rightSide">
+                <div class="header">
+                    <div class="username">
+                        <h4>Yotam</h4>
+                    </div>
+                </div>
+                <!--chat box-->
+                <div class="chatbox" id="chatbox">
+                    <div class="message message_other">
+                        <p id="msg"> Hi this is Yotam<br><span>12:11</span></p>
+                    </div>
+                </div> 
+                <!--chat input-->
+                <div class="chat_input">
+                    <input type="text" id="textinput" placeholder="Type a message">
+                    <button class="send_button" id="send_btn" type="submit">Send</button>
+                </div>
+                
+            </div>
+        </div>
+    </body>
+
+    
+    <script>
+        // script for users:
+        // script for users:
+        // var sessionString = sessionStorage.getItem('array');
+        // const arr = JSON.parse(sessionString);
+        //init page hardcoded:       
+        var today = new Date();
+        var time = today.getHours() + ":" + today.getMinutes();
+        var user1 = {user:'Bob', password: 'Ba102030', display:'Bob1'};
+        var user2 = {user:'Eve', password:'E1122551', display:'EE'};
+        var user3 = {user:'Alice', password:'AL205214', display:'AL'};
+        var user4 = {user:'Yotam', password: 'YoTheking1', display:'YOYO'};
+        var user5 = {user:'Dana', password:'D0987654', display:'Danale'};
+        const arr = [user1,user2,user3,user4,user5];
+        console.log(arr);
+        document.getElementById("name1").innerHTML = arr[0].user;
+        document.getElementById("name2").innerHTML = arr[1].user;
+        document.getElementById("name3").innerHTML = arr[2].user;
+        document.getElementById("name4").innerHTML = arr[3].user;
+        document.getElementById("name5").innerHTML = arr[4].user;
+        document.getElementById("play4").style.background = "rgb(96, 113, 110)";
+        if (arr.length > 5){
+        const userlist = '<div class="block"><div class="imgbx"> <img src="avatar.JPG" class="cover">'
+                        + '</div><div class="details"><div class="listHead">'
+                        + '<h4 id="name4">' + arr[3].user +'</h4>'
+                            + '<p>' + Math.floor(Math.random() * 25) + ':' + Math.floor(Math.random() * 60) + '</p></div>'
+                            + '<div class="message_p">'
+                            + '<p1>last message...</p1></div></div></div>'; 
+        const listDiv = document.getElementById("chatlist");
+        listDiv.innerHTML += userlist;
+        }
+        
+        
+        //script for click:
+        document.getElementById("send_btn").onclick = function(){
+            const msg = document.getElementById("textinput").value;
+            if(msg != ""){
+            const stringmsg = '<div class="message message_my"><p id="msg">'
+                + msg + '<br><span>' + time + '</span></p> </div>';          
+            const msgDiv = document.getElementById("chatbox");
+            msgDiv.innerHTML += stringmsg;  
+            document.getElementById("textinput").value = "";
+            }
+	    }
+    </script>
+</html>

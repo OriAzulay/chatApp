@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Chat</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+
+	<div class="container">
+			<!--user name-->
+			<div class="row">
+				<div class="col-25">
+					<label for="fname">User name</label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="fname" name="username" placeholder="Your name.." required>
+				</div>
+			</div>
+			<!-- password -->
+			<div class="row">
+				<div class="col-25">
+					<label for="pass">Password</label>
+				</div>
+				<div class="col-75">
+					<input type="password" id="pass" name="password" placeholder="Your password.." required>
+				</div>
+			</div>
+			<!--Display name-->
+			<div class="row">
+				<div class="col-25">
+					<label for="dispname">Display name</label>
+				</div>
+				<div class="col-75">
+					<input type="text" id="dispname" name="displatName" placeholder="Name.." required>
+				</div>
+			</div>
+			<!-- Button-->
+			<div>
+				<button class="button" id="btn" type="submit">Register</button>
+				<a>Already registerd? </a>
+				<a href="login.html">Click here</a>
+				<a>to login</a>
+			</div>
+	</div>
+<script src="Valid.js"></script>
+<script>
+	var user1 = {user:'Bob', password: 'Ba102030', display:'Bob1'};
+	var user2 = {user:'Eve', password:'E1122551', display:'EE'};
+	var user3 = {user:'Alice', password:'AL205214', display:'AL'};
+	var user4 = {user:'Yotam', password: 'YoTheking1', display:'YOYO'};
+	var user5 = {user:'Dana', password:'D0987654', display:'Danale'};
+	const arr1 = [user1,user2,user3,user4,user5];
+	const arr = [user1,user2,user3,user4,user5];
+	var sessionString = sessionStorage.getItem('array');
+	console.log(arr);
+	document.getElementById('btn').onclick = function(){
+		let name = document.getElementById("fname").value;
+		let pass = document.getElementById("pass").value;
+		let disp = document.getElementById("dispname").value;
+		if(arr != null){
+		arr.push({ user: name, password: pass, display: disp });	
+		}else{
+		arr1.push({ user: name, password: pass, display: disp });
+		}
+		console.log(arr);
+		sessionStorage.setItem('array',JSON.stringify(arr));
+		if (name == '' || pass == '' || disp == ''){
+			alert("Please enter valid input!");
+			return;
+		}
+		var flag = false;
+		var check1 = 0;
+		var check2 = 0;
+		for (let i in pass){
+			if (isPositiveInteger(pass.charAt(i))){
+				flag = true;
+				check1 = 1;
+			}
+		}
+		flag = false;
+		for (let i in pass){
+			if (!isPositiveInteger(pass.charAt(i))){
+				flag = true;
+				check2 = 2;
+			}
+		}
+		var check = check1 + check2;
+		if(check == 3){window.location.href='Chat.html';}
+		else{
+			alert("Please enter a valid password - must includ numbers abd characters");
+		}
+		
+	}
+</script>
+
+
+
+</body>
+
+</html>
