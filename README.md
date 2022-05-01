@@ -8,10 +8,10 @@ The first level is to develop a chat app, hardcoded, by javascript, HTML, and Re
  
 Main page: login:
 This app begins with a login page in which the app asks the user to type the user name and password. the users are 'hardcoded' and the list of the users(for check validation of the assignment) will be the following :
-user name 1 : Bob , password: Ba102030,
-user name 1 : Eve , password: E1122551,
-user name 1 : Alice, password: AL205214,
-user name 1 : Yotam, password: YoTheking1,
+user name 1 : Bob , password: Ba102030.
+user name 1 : Eve , password: E1122551.
+user name 1 : Alice, password: AL205214.
+user name 1 : Yotam, password: YoTheking1.
 user name 1 : Dana, password: D0987654.
 The rules of login is combination of numbers and characters only!
 the users will be saved in a hardcoded array during all the paged until we'll use sockets.
