@@ -4,7 +4,7 @@ The first assignment was for the Chat app, an application developed and designed
 The first level is to develop a chat app, hardcoded, by javascript, HTML, and React.
 *Chat application build by HTML, Javascript* 
  
- In this exercise i used HTML & Javascript to build a chat application.
+ -----In this exercise i used HTML & Javascript to build a chat application.----
  
 Main page: login:
 This app begins with a login page in which the app asks the user to type the user name and password. the users are 'hardcoded' and the list of the users(for check validation of the assignment) will be the following :
@@ -22,13 +22,14 @@ if the user didn't type anything, a message will popup
 Register page:
 On this page, the user will type the user name and valid password - a combination of characters and numbers.
 if the user didn't type anything, a message will popup
-
 Chat room page:
 on this page, we will see the chat room. the user will pick the chat he wants to use.
-
 Chat rooms:
 every room will show the messages between users.
-*More features that i have to add and didnt had time*
+
+
+----------More features that i have to add and didnt had time----------
+
  Chat room:
  First i will add an option when we will type in  the search input , and click enter, the relevant user will be the only one on the chat list - for doing it i will add a function for click event, the will iterate the array of users and search the relevant.
  For each chat room and user, i will add 3 more functions - option to send an image, an option to send a voice message, and an option to send a location
