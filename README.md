@@ -2,7 +2,7 @@
 
 The first assignment was for the Chat app, an application developed and designed during the cs advanced programming course at Bar Ilan University.
 The first level is to develop a chat app, hardcoded, by javascript, HTML, and React.
-  ################## Chat application build by HTML, Javascript ##########
+*Chat application build by HTML, Javascript* 
  
  In this exercise i used HTML & Javascript to build a chat application.
  
@@ -28,7 +28,7 @@ on this page, we will see the chat room. the user will pick the chat he wants to
 
 Chat rooms:
 every room will show the messages between users.
-   ################## More features that i have to add and didnt had time##########
+*More features that i have to add and didnt had time*
  Chat room:
  First i will add an option when we will type in  the search input , and click enter, the relevant user will be the only one on the chat list - for doing it i will add a function for click event, the will iterate the array of users and search the relevant.
  For each chat room and user, i will add 3 more functions - option to send an image, an option to send a voice message, and an option to send a location
